@@ -33,10 +33,21 @@ was modified during validation.
 ## Limits
 
 No new 626-step training or four-GPU BF16 qualification was run for this
-packaging release. The reachable machine has 24GB TITAN RTX GPUs, below the
-training preflight requirement; the original RTX 6000 Ada training host was
-unreachable. The launchers still require a real two-update qualification on the
-reviewer's four-GPU machine before formal training.
+packaging release. Nitro2 has 24GB TITAN RTX GPUs, below the training preflight
+requirement; the original RTX 6000 Ada training host was unreachable. The
+launchers still require a real two-update qualification on the reviewer's
+four-GPU machine before formal training.
+
+Mantis was successfully accessed on 2026-09-15 and its Slurm node inventory was
+checked. Its A100 nodes expose one GPU each; its largest L40S nodes
+(`mantis-034` through `mantis-036`) expose three GPUs each. No advertised node
+provides the four matching GPUs required by the unchanged single-node launcher.
+A scheduler-only check (`sbatch --test-only --account=pi-ji --qos=general
+--partition=general --nodes=1 --ntasks=1 --cpus-per-task=8 --mem=56G
+--gres=gpu:4 --time=00:10:00 --wrap='hostname'`) returned
+`Requested node configuration is not available`. No training job was submitted
+and this resource check is not a passed GPU qualification. Multi-node execution
+would require a separately validated launcher adaptation.
 
 The GPU loading example used float16, one audio, and the Transformers
 convenience path. It does not establish the paper's vLLM accuracy or rerun a full
