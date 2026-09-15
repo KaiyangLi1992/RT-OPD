@@ -1,5 +1,7 @@
-# RT-OPD: Reward-Tilted On-Policy Distillation
+# Mizar-3B: Audio Understanding with RT-OPD
 
+**Mizar-3B** is the Ke-based 3B member of the [Mizar model family](#mizar-model-family),
+trained with **RT-OPD (Reward-Tilted On-Policy Distillation)** for audio understanding.
 RT-OPD trains audio-language students to answer questions about sounds. At each
 student-generated prefix, a frozen teacher scores the continuation **with audio
 and without audio**. Their probability difference tilts the distillation target
@@ -10,11 +12,23 @@ This repository contains the main absent-audio RT-OPD experiment for
 training code, pinned environments, exact data manifests, evaluation tools, and
 a released Ke LoRA checkpoint.
 
-**[Model](https://huggingface.co/KaiyangLi/RT-OPD-Ke-3B)** · **[Training manifests](https://huggingface.co/KaiyangLi/RT-OPD-Ke-3B/tree/3b2e2b2145874dd496a506f34187767ef91c50f0/reproducibility)** · **[Training audio](https://huggingface.co/datasets/bmmv-9x2q7/aa-opd-v1-training-audio-cb33687)** · **[Data guide](docs/DATA.md)** · **[Method & recipe](docs/REVIEWER_GUIDE.md)** · **[Evaluation](docs/EVALUATION.md)**
+**[Model](https://huggingface.co/KaiyangLi/Mizar-3B)** · **[Training manifests](https://huggingface.co/KaiyangLi/Mizar-3B/tree/3b2e2b2145874dd496a506f34187767ef91c50f0/reproducibility)** · **[Training audio](https://huggingface.co/datasets/bmmv-9x2q7/aa-opd-v1-training-audio-cb33687)** · **[Data guide](docs/DATA.md)** · **[Method & recipe](docs/REVIEWER_GUIDE.md)** · **[Evaluation](docs/EVALUATION.md)**
 
 > **Access:** This GitHub repository and the released HF model/manifests are
 > private. Reviewers need access to both. The source model and dataset links
 > below identify the separate upstream assets.
+
+## Mizar model family
+
+| Model | Model weights | Code | Foundation / training |
+|---|---|---|---|
+| **Mizar-159M** | [KaiyangLi/Mizar-159M](https://huggingface.co/KaiyangLi/Mizar-159M) | [Mizar_159M](https://github.com/KaiyangLi1992/Mizar_159M) | CED-Small + SmolLM2-135M; three-stage audio-language training |
+| **Mizar-3B** | [KaiyangLi/Mizar-3B](https://huggingface.co/KaiyangLi/Mizar-3B) | [RT-OPD](https://github.com/KaiyangLi1992/RT-OPD) | Ke-Omni-R-3B + RT-OPD; released as a LoRA adapter |
+
+These models share the **Mizar** family name and audio-understanding focus.
+They use different foundations and training recipes. Mizar-3B is the name of
+the released Ke-based model; RT-OPD is its distillation method. The Qwen profile
+in this repository remains a separate RT-OPD experiment.
 
 ## Method
 
@@ -42,7 +56,7 @@ every example retains gold-answer cross-entropy (CE). See the
 
 | Role | Download / model card | Used for |
 |---|---|---|
-| **Released RT-OPD Ke adapter** | [KaiyangLi/RT-OPD-Ke-3B](https://huggingface.co/KaiyangLi/RT-OPD-Ke-3B) | Best Ke seed by Macro-3: seed 85, step 626; LoRA adapter, requires the Ke 3B base |
+| **Mizar-3B adapter** | [KaiyangLi/Mizar-3B](https://huggingface.co/KaiyangLi/Mizar-3B) | Best Ke seed by Macro-3: seed 85, step 626; LoRA adapter, requires the Ke 3B base |
 | Ke student base | [KE-Team/Ke-Omni-R-3B](https://huggingface.co/KE-Team/Ke-Omni-R-3B) | Ke training initialization and released-adapter inference |
 | Qwen student base | [Qwen/Qwen2.5-Omni-3B](https://huggingface.co/Qwen/Qwen2.5-Omni-3B) | Qwen training initialization |
 | Frozen teacher | [KE-Team/Ke-Omni-R](https://huggingface.co/KE-Team/Ke-Omni-R) | Shared 7B teacher for both students; training only |
@@ -57,7 +71,7 @@ published in this release. Base-model revisions and file hashes are pinned in
 
 | Asset | Source / download | Role in this release |
 |---|---|---|
-| **Exact experiment manifests** | [Frozen manifest archive](https://huggingface.co/KaiyangLi/RT-OPD-Ke-3B/blob/3b2e2b2145874dd496a506f34187767ef91c50f0/reproducibility/frozen_data.tar.gz) | About 4.5 MB: exact 10,000 training rows, teacher gate, vocabulary mask, benchmark manifests and audio hashes; no raw audio |
+| **Exact experiment manifests** | [Frozen manifest archive](https://huggingface.co/KaiyangLi/Mizar-3B/blob/3b2e2b2145874dd496a506f34187767ef91c50f0/reproducibility/frozen_data.tar.gz) | About 4.5 MB: exact 10,000 training rows, teacher gate, vocabulary mask, benchmark manifests and audio hashes; no raw audio |
 | Training audio snapshot | [Frozen AudioMCQ archive](https://huggingface.co/datasets/bmmv-9x2q7/aa-opd-v1-training-audio-cb33687) | 8.17 GB archive; the experiment manifests select the exact 10,000 rows |
 | Training source | [AudioMCQ-StrongAC-GeminiCoT](https://huggingface.co/datasets/AudioLLMs/dcase2026_task5_AudioMCQ-StrongAC-GeminiCoT) | Original upstream dataset |
 | MMAU full | [MMAU-test](https://huggingface.co/datasets/gamma-lab-umd/MMAU-test) | 9,000 test examples; hidden labels, official scoring |
@@ -92,13 +106,13 @@ Allow at least **150 GB of disk per profile** for the complete workflow.
 Single-audio inference has a separate memory footprint and does not require the
 four-GPU training setup.
 
-## Try the released Ke model
+## Try Mizar-3B
 
 After the Ke setup and HF login above, supply your own audio file:
 
 ```bash
 ke/.venv/bin/python tools/infer.py \
-  --adapter KaiyangLi/RT-OPD-Ke-3B \
+  --adapter KaiyangLi/Mizar-3B \
   --revision 3b2e2b2145874dd496a506f34187767ef91c50f0 \
   --audio /absolute/path/example.wav \
   --question "Which sound is audible?" \
@@ -182,7 +196,7 @@ ADQA-cl accuracies. **±** is the sample standard deviation of per-seed Macro-3.
 |---|---:|---:|---:|---:|
 | Ke · mean of seeds 82–86 | 72.72 | 60.08 | 56.45 | **63.08 ± 0.36** |
 | Qwen · mean of seeds 92–96 | 72.18 | 58.90 | 55.70 | **62.26 ± 0.15** |
-| Released Ke · seed 85 | 72.78 | 61.10 | 57.07 | **63.65** |
+| Mizar-3B · Ke seed 85 | 72.78 | 61.10 | 57.07 | **63.65** |
 
 The released adapter was selected **post hoc by highest Macro-3** among the five
 Ke seeds; it is reported separately from the five-seed mean. All final

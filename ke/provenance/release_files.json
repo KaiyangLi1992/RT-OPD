@@ -1,6 +1,6 @@
 {
   "configs/benchmark_sources.json": "d712167b224c453f3ed6fbef56c8462526636a1847aa005b6ae8fe1824d0774d",
-  "configs/frozen_data.json": "fbb1faa7e99cb70a8e32e124560e85f6f0ec5354084b7d9c1639bb28e7bca837",
+  "configs/frozen_data.json": "59950d20f84e99a0fdc4ca410971a5268fc35abce499144fc9b711937720e50b",
   "configs/ke_grid16.json": "6be38b453105a5e79c7ea1ff12ff727733934540090e2b0df306617cccd77e96",
   "configs/ke_grid16_assets.json": "624fcaed701478de66dba0dc0124983b46c3451ee8a3bb065ba433d248906b94",
   "configs/mmau_full.json": "e606fa9d5d444e50200e11f851b3183e04f1470683c41df68b7aef2cabfcb61b",

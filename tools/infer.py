@@ -5,7 +5,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[1]
 p=argparse.ArgumentParser()
 p.add_argument('--student',choices=['ke','qwen'],default='ke')
-p.add_argument('--adapter',default='KaiyangLi/RT-OPD-Ke-3B')
+p.add_argument('--adapter',default='KaiyangLi/Mizar-3B')
 p.add_argument('--revision',default='main')
 p.add_argument('--audio',type=Path,required=True)
 p.add_argument('--question',required=True)
