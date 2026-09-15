@@ -19,7 +19,7 @@ a released Ke LoRA checkpoint.
 ## Method
 
 ```mermaid
-flowchart LR
+flowchart TD
     X["Audio + question + choices"] --> S["Student · trainable LoRA<br/>Ke 3B or Qwen 3B"]
     S --> Y["Online sampled continuation<br/>Shared prefix for teacher scoring"]
     X --> A["Frozen Ke 7B teacher<br/>Audio present · p_audio"]
@@ -29,15 +29,14 @@ flowchart LR
     A --> T["Reward-tilted target q<br/>Audio vs. no-audio log-probability contrast"]
     N --> T
     T --> L["Answer CE + gated reverse KL<br/>Teacher target detached"]
-    S --> L
     G["Gold answer + frozen gate"] --> L
-    L -. "Update student LoRA" .-> S
+    L --> U["Update student LoRA"]
     classDef input fill:#eef2ff,stroke:#6366f1,color:#1e1b4b
     classDef student fill:#ecfdf5,stroke:#059669,color:#064e3b
     classDef teacher fill:#eff6ff,stroke:#2563eb,color:#1e3a8a
     classDef objective fill:#fff7ed,stroke:#ea580c,color:#7c2d12
     class X,Q,Y,G input
-    class S student
+    class S,U student
     class A,N teacher
     class T,L objective
 ```
