@@ -1,0 +1,41 @@
+{
+  "repo_id": "KaiyangLi/RT-OPD-Ke-3B",
+  "filename": "reproducibility/frozen_data.tar.gz",
+  "sha256": "0edfca0db13f1a5008908e98fb25313819561afd338b689b7a7e1e09fc43668f",
+  "bytes": 4509459,
+  "files": {
+    "adqa.jsonl": {
+      "sha256": "72a3e9d5ecee41fa3150f62f52a8638dd13dfd75c46f4cbae0b28855c9316a68",
+      "bytes": 1268374
+    },
+    "audio_files.json": {
+      "sha256": "be205d2dd126eb1c6f986b0251492e78395c3edb44eef2f8f798cd5be169dba7",
+      "bytes": 2332772
+    },
+    "balanced.jsonl": {
+      "sha256": "ebb40621dede211ffc9b90cdbc17b1c890bb099fc1d56cda9729d946dd1e359a",
+      "bytes": 1538387
+    },
+    "canonical_valid_vocab_v2.json": {
+      "sha256": "769d5c79f73cda1684c4e8eacbd29f9853a04ed7df650fc6c35dde8314e6b119",
+      "bytes": 1744117
+    },
+    "mmar.jsonl": {
+      "sha256": "ff35bddf79ddc23ed0cba088bf77c1f0c8ef238e8673503a4bbcda6a17f8439c",
+      "bytes": 912351
+    },
+    "mmau.jsonl": {
+      "sha256": "3f56f22df6aa106f56869ea0c9faf557c7bcf91c085cc43ebba19e5c931505f7",
+      "bytes": 1058224
+    },
+    "teacher_gate.jsonl": {
+      "sha256": "c88b816284daf4f13cb7dbdf091f6dc1baafd31ab42f9824e115b72f0ebd06f2",
+      "bytes": 6464668
+    },
+    "train.jsonl": {
+      "sha256": "50dd45bfe1139b0445fd1aee0812175fd956406f4427af364fa219e72341b067",
+      "bytes": 17618608
+    }
+  },
+  "revision": "3b2e2b2145874dd496a506f34187767ef91c50f0"
+}

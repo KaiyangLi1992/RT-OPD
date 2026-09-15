@@ -1,0 +1,1 @@
+Fixed manifests download from the pinned HF archive specified in `../configs/frozen_data.json`. Run `../scripts/prepare.py` after authenticating to the private HF repository. Audio downloads separately from the pinned upstream sources.

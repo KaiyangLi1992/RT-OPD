@@ -1,0 +1,11 @@
+{
+  "repo_id": "gamma-lab-umd/MMAU-test",
+  "revision": "8e835a9f64ed6c703b3c9ddb6d423d9ab697061e",
+  "archive": {
+    "sha256": "aca109644fb7d1a054a0a5a309897e7997f2d6cf3fe579f87a183e1672a3de86",
+    "size_bytes": 10567652271
+  },
+  "answers_hidden": true,
+  "count": 9000,
+  "scorer": "https://huggingface.co/spaces/sonalkum/MMAU-Eval"
+}

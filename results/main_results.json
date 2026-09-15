@@ -1,0 +1,312 @@
+[
+  {
+    "student": "ke",
+    "seed": 82,
+    "step": 626,
+    "alpha": 1,
+    "target": "linear_noaudio",
+    "learning_rate": 7.5e-05,
+    "scores": {
+      "mmau_full": {
+        "accuracy": 0.7262222222222222,
+        "correct": 6536,
+        "count": 9000,
+        "evidence_sha256": "3011e3c54e80822acaeabc06a19b84314f42dff3cdfe7361b7dd19917cc72bae"
+      },
+      "mmar": {
+        "accuracy": 0.612,
+        "correct": 612,
+        "count": 1000,
+        "evidence_sha256": "6f803f6d1c9c076bd18fc2279906d9698986c5e4c3dfe04fa5a5a9b79df1877c"
+      },
+      "adqa": {
+        "accuracy": 0.5567533291058973,
+        "correct": 878,
+        "count": 1577,
+        "evidence_sha256": "1a91cf9e5aa581ba86833a8f9387cebdd9651249a92db0d650835a75200cc9a0"
+      }
+    },
+    "macro3": 0.6316585171093732,
+    "original_launch_sha256": "0c1c04bd67c10f258c1d23df2d93cb072d85858ab2aef3a64ecddb8264b4730a",
+    "original_checkpoint_manifest_sha256": "261c00e03a3b97db51ae770780e39bda7efab9287e76bd93967a34db5cd414a3"
+  },
+  {
+    "student": "ke",
+    "seed": 83,
+    "step": 626,
+    "alpha": 1,
+    "target": "linear_noaudio",
+    "learning_rate": 7.5e-05,
+    "scores": {
+      "mmau_full": {
+        "accuracy": 0.7261111111111112,
+        "correct": 6535,
+        "count": 9000,
+        "evidence_sha256": "3bc13fa8198d20977f6455473b20202ff1aeabf70736ecbca1ffdec8da64f7d0"
+      },
+      "mmar": {
+        "accuracy": 0.599,
+        "correct": 599,
+        "count": 1000,
+        "evidence_sha256": "1022f5cd01fe6d958b3d1c9525abc420323f3c123a4cbd5ad98b9edf842fd838"
+      },
+      "adqa": {
+        "accuracy": 0.5637285986049461,
+        "correct": 889,
+        "count": 1577,
+        "evidence_sha256": "2601b73b099d4028a8676f867948d18f19f84cfaae1bf68615dc438fe36aea04"
+      }
+    },
+    "macro3": 0.6296132365720191,
+    "original_launch_sha256": "75db8e48311615f012db97b9f2329f82787562588624797dac4be44b6b7eb560",
+    "original_checkpoint_manifest_sha256": "58e5de9653743646554c3e4b24ef2c9e6bce90cc3aed28fd769dbcaa592e3a97"
+  },
+  {
+    "student": "ke",
+    "seed": 84,
+    "step": 626,
+    "alpha": 1,
+    "target": "linear_noaudio",
+    "learning_rate": 7.5e-05,
+    "scores": {
+      "mmau_full": {
+        "accuracy": 0.7247777777777777,
+        "correct": 6523,
+        "count": 9000,
+        "evidence_sha256": "5db1966bd95ce3b312ff988d94aa46143314bbac929ff4be799e91a0f0977c65"
+      },
+      "mmar": {
+        "accuracy": 0.587,
+        "correct": 587,
+        "count": 1000,
+        "evidence_sha256": "e84b3231bbc2bb72e4adcc9f98ac23b1ee589713d59bbcde2b3fec668d840697"
+      },
+      "adqa": {
+        "accuracy": 0.5688015218769816,
+        "correct": 897,
+        "count": 1577,
+        "evidence_sha256": "74fea7f0923307f6aac6abda849611ee728ee95599689c74e4529f68df0bd821"
+      }
+    },
+    "macro3": 0.6268597665515864,
+    "original_launch_sha256": "23642ac15b23d2d300ffb3d73c3f68af4d2c7e6d758e0772198c0ea15f53b8bc",
+    "original_checkpoint_manifest_sha256": "d3fcb54493f9026a39f306338fe6222aa7ed4316c66a5f52f623dcc8d5678cde"
+  },
+  {
+    "student": "ke",
+    "seed": 85,
+    "step": 626,
+    "alpha": 1.0,
+    "target": "linear_noaudio",
+    "learning_rate": 7.5e-05,
+    "scores": {
+      "mmau_full": {
+        "accuracy": 0.7277777777777777,
+        "correct": 6550,
+        "count": 9000,
+        "evidence_sha256": "19d20bb5beafa37c1694a92b28a9b5ca3f4f8795dd4914b9f33724daf84d4bff"
+      },
+      "mmar": {
+        "accuracy": 0.611,
+        "correct": 611,
+        "count": 1000,
+        "evidence_sha256": "033c8224f666fe613dbd72327e2389c6557aefd0456b7c1391e06bea37bbecad"
+      },
+      "adqa": {
+        "accuracy": 0.570703868103995,
+        "correct": 900,
+        "count": 1577,
+        "evidence_sha256": "920c439ddc2146a5ea02574e60c09bef41e70972b0b9bb8d0a15fc53a72f89cb"
+      }
+    },
+    "macro3": 0.6364938819605909,
+    "original_launch_sha256": "1c9a34c4230888818a3a7365e240b9405ee563f7bf64e107370a70dce8c2a1f9",
+    "original_checkpoint_manifest_sha256": "b8b87e3cf85fe673813297ea2e6d7d580e9d29c2ef313a19cc4a43ec4677be69"
+  },
+  {
+    "student": "ke",
+    "seed": 86,
+    "step": 626,
+    "alpha": 1.0,
+    "target": "linear_noaudio",
+    "learning_rate": 7.5e-05,
+    "scores": {
+      "mmau_full": {
+        "accuracy": 0.7312222222222222,
+        "correct": 6581,
+        "count": 9000,
+        "evidence_sha256": "11a847c0bc26361f82bb393363f7c743c2f3dbc5562c1950fcb84d752a94dbb7"
+      },
+      "mmar": {
+        "accuracy": 0.595,
+        "correct": 595,
+        "count": 1000,
+        "evidence_sha256": "35c62655dce260e526afab0f6b5a786f39b53dafb43d52fd09f85b192ec6e317"
+      },
+      "adqa": {
+        "accuracy": 0.5624603677869372,
+        "correct": 887,
+        "count": 1577,
+        "evidence_sha256": "7080d3484cc87058704e7258123c186e2c898337e14eaa84e05db0961c90d806"
+      }
+    },
+    "macro3": 0.6295608633363865,
+    "original_launch_sha256": "909b572e92caa44dde342e7da88309ed79e726bced1f37aade3f5deb019b95d5",
+    "original_checkpoint_manifest_sha256": "433632205f06a1e4cfea7dc772c18d02285d5fd7e1324ca4789afb01b94b3f3f"
+  },
+  {
+    "student": "qwen",
+    "seed": 92,
+    "step": 626,
+    "alpha": 1.0,
+    "target": "linear_noaudio",
+    "learning_rate": 2.5e-05,
+    "scores": {
+      "mmau_full": {
+        "accuracy": 0.7263333333333334,
+        "correct": 6537,
+        "count": 9000,
+        "evidence_sha256": "1f16f629253e9526d53755150f164719f79c86177ae63ce9f862d13038bc8be8"
+      },
+      "mmar": {
+        "accuracy": 0.592,
+        "correct": 592,
+        "count": 1000,
+        "evidence_sha256": "69ee1c8e0d64f1b33b42855979dc9604ab8c63e3f709de8ae8fd163ac3939110"
+      },
+      "adqa": {
+        "accuracy": 0.5485098287888396,
+        "correct": 865,
+        "count": 1577,
+        "evidence_sha256": "0219df5c79c2b64ca13ea5ac7fd44441e633f8d26a9b109e3799863458384e3f"
+      }
+    },
+    "macro3": 0.6222810540407243,
+    "original_launch_sha256": "d9d4ab94282d18a46163b558f8c06e3c35362630c30333713f39cd8845f6dcf0",
+    "original_checkpoint_manifest_sha256": "da43591bdab7b9990508262dfd202de35a284e08dceadcd6d6f78becf5e3b566"
+  },
+  {
+    "student": "qwen",
+    "seed": 93,
+    "step": 626,
+    "alpha": 1.0,
+    "target": "linear_noaudio",
+    "learning_rate": 2.5e-05,
+    "scores": {
+      "mmau_full": {
+        "accuracy": 0.7205555555555555,
+        "correct": 6485,
+        "count": 9000,
+        "evidence_sha256": "f1539316bb301a14f6c5a4ff6fbdf422749ced967584c3f766d9cf8434f4fb84"
+      },
+      "mmar": {
+        "accuracy": 0.585,
+        "correct": 585,
+        "count": 1000,
+        "evidence_sha256": "e4bd2fceb3acce28a54c5b2a4eaa3087275798619f08806b836fd49164ec0ea2"
+      },
+      "adqa": {
+        "accuracy": 0.5548509828788839,
+        "correct": 875,
+        "count": 1577,
+        "evidence_sha256": "c8615a9dd0f8e6ccce6714d06ee0be572ee0256de1d4d2b06fc4195290e60643"
+      }
+    },
+    "macro3": 0.6201355128114798,
+    "original_launch_sha256": "ab5c12fb0548349956f34f650b2755d6871923477fa85ce845c5879a8d767daf",
+    "original_checkpoint_manifest_sha256": "577761494bed0408430cff5ffd4337b60600182277ffcb7f8677a2c9f2e2577c"
+  },
+  {
+    "student": "qwen",
+    "seed": 94,
+    "step": 626,
+    "alpha": 1.0,
+    "target": "linear_noaudio",
+    "learning_rate": 2.5e-05,
+    "scores": {
+      "mmau_full": {
+        "accuracy": 0.721,
+        "correct": 6489,
+        "count": 9000,
+        "evidence_sha256": "dd71cf5bdff7d96a0f4b3ec84c131b2248a803e08ce8ee33a51d4a02b456270f"
+      },
+      "mmar": {
+        "accuracy": 0.589,
+        "correct": 589,
+        "count": 1000,
+        "evidence_sha256": "5e545c9d51f25c14ccbafed3bdf339c57d2738f1457330ae6993133b06cfe23c"
+      },
+      "adqa": {
+        "accuracy": 0.559289790741915,
+        "correct": 882,
+        "count": 1577,
+        "evidence_sha256": "1eec544ad759f563a03c89416c995a09891b1a962482e6767c51283511b447cd"
+      }
+    },
+    "macro3": 0.6230965969139716,
+    "original_launch_sha256": "99730dbc9572ed184789c3d1d98aa1f4be8b7ad7823e2944d308cdd14ab10837",
+    "original_checkpoint_manifest_sha256": "840b4fa61637d8775b8c1fd68e5c0a4fe22ed956e608dd1a758be56bb5c47224"
+  },
+  {
+    "student": "qwen",
+    "seed": 95,
+    "step": 626,
+    "alpha": 1.0,
+    "target": "linear_noaudio",
+    "learning_rate": 2.5e-05,
+    "scores": {
+      "mmau_full": {
+        "accuracy": 0.722,
+        "correct": 6498,
+        "count": 9000,
+        "evidence_sha256": "8e69afd911658b39c70bced0425e917907870de1e248aa9e0504ba4a5ed0175b"
+      },
+      "mmar": {
+        "accuracy": 0.589,
+        "correct": 589,
+        "count": 1000,
+        "evidence_sha256": "3d6d0cd925f8bfc8ec59db5aeb4eb0ac35b558c22b4d052bfe5a2b19bd9e2632"
+      },
+      "adqa": {
+        "accuracy": 0.5618262523779328,
+        "correct": 886,
+        "count": 1577,
+        "evidence_sha256": "f41755ca9f198b1bd28c255e88e57467afd12e8b1de470e5b25edcdb27461321"
+      }
+    },
+    "macro3": 0.6242754174593109,
+    "original_launch_sha256": "ce7ed0051cbf4b09f696cb835bb74a7d1ca61d3041f2869f9291dc18aac5998d",
+    "original_checkpoint_manifest_sha256": "338ca2264f3eac10cba8c52f50d58a1706749da50bd851fa8edef6879a30afcd"
+  },
+  {
+    "student": "qwen",
+    "seed": 96,
+    "step": 626,
+    "alpha": 1.0,
+    "target": "linear_noaudio",
+    "learning_rate": 2.5e-05,
+    "scores": {
+      "mmau_full": {
+        "accuracy": 0.719,
+        "correct": 6471,
+        "count": 9000,
+        "evidence_sha256": "99be3bf73d307bb28cdeefca898107a4323efd384ca2a0dcd4a70b312320e6cb"
+      },
+      "mmar": {
+        "accuracy": 0.59,
+        "correct": 590,
+        "count": 1000,
+        "evidence_sha256": "bf9b6be53d7aaa4d18c8cf6611c05195ff0329c41ab54f85b2cf4555419d65bc"
+      },
+      "adqa": {
+        "accuracy": 0.560558021559924,
+        "correct": 884,
+        "count": 1577,
+        "evidence_sha256": "d200a1a28e7480e1336370439c402bfa21210546e3b5e6ccbac61a67b6088e06"
+      }
+    },
+    "macro3": 0.6231860071866413,
+    "original_launch_sha256": "47e440e99e0e33ee4df4609b2a86fd8621fe84fc044470061f06439135f4f4b9",
+    "original_checkpoint_manifest_sha256": "4d939382932e9ad65dd2f226b5b303497bb6627eefa4af760ff15cd6fd39b707"
+  }
+]

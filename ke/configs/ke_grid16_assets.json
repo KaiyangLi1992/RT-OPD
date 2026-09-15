@@ -1,0 +1,81 @@
+{
+  "full_audio_tree_sha256": "73c9b65da3eda7b10adbb8796ac3c78175fa7552378b42f1f9f126b608e96019",
+  "full_manifest": {
+    "sha256": "5e1948ae190bbcec329992a6ebd2e2a75037f91b309dcfe803be2e1c91b1e404",
+    "size_bytes": 9291115
+  },
+  "full_parquet": {
+    "sha256": "3a81c2744a84745b2704a3836641ea5b40d0cd622bf285b14781e996c1ffa34e",
+    "size_bytes": 1194656
+  },
+  "orders": {
+    "0": {
+      "sha256": "ce8156b3bd3309059e419b02db4a979048e563ebd97350c92de8ae405fe9b557",
+      "size_bytes": 437865
+    },
+    "1": {
+      "sha256": "ac1a5b08edcc70c29726756768bf5c7621ad426b9fbbbe43fc21379ba25b0876",
+      "size_bytes": 437865
+    }
+  },
+  "policy": "Regenerate exact epoch orders from the frozen rows and teacher gate; verify against original run hashes.",
+  "repeat_orders": {
+    "82": {
+      "0": {
+        "sha256": "13e936c27f5c3d8be3bfc63bc786a339e8cb9f64ca2f9227327ba38a8a397342",
+        "size_bytes": 437865
+      },
+      "1": {
+        "sha256": "3879e93c6131ebc1be648abc63b3c9b18ea730664bea7ed5f5d38a2f692aa357",
+        "size_bytes": 437865
+      }
+    },
+    "83": {
+      "0": {
+        "sha256": "ec538c27fe5acac6dcd4130c418db289b36d2f86b81b61177d3ffa48fdff8895",
+        "size_bytes": 437865
+      },
+      "1": {
+        "sha256": "9f4725e7fb55c693cee22629491ed2d8f619fcd40c8dbadb1eb31ed135aeb60e",
+        "size_bytes": 437865
+      }
+    },
+    "84": {
+      "0": {
+        "sha256": "d7a442080f1c92570a30751fe8b3bb52a2f4639c3871fd6bca426f3da67aeb46",
+        "size_bytes": 437865
+      },
+      "1": {
+        "sha256": "c60234fa824df3705a485c53ef57af067ebb0a3bbc5fc0d27724599b5c1f9b13",
+        "size_bytes": 437865
+      }
+    },
+    "85": {
+      "0": {
+        "sha256": "684b4c75f36cd167d5991d9cf2276ad44ac9480f63177c5c4ae8d6f2b88e8977",
+        "size_bytes": 437865
+      },
+      "1": {
+        "sha256": "84149a7fd8440de08f3e0f53bbededbfc6b5404b21f9d0006cd3d08a15bbc5b6",
+        "size_bytes": 437865
+      }
+    },
+    "86": {
+      "0": {
+        "sha256": "922e9064a0fbdaa6b47e105433d5ba093c3a8a76bb2e1965ceaa84f3b3100a7a",
+        "size_bytes": 437865
+      },
+      "1": {
+        "sha256": "c9a40a242b2cee84a451f344d26bc59f66c56f30998f524e61c19480d92ef5ae",
+        "size_bytes": 437865
+      }
+    }
+  },
+  "wrapper": {
+    "filename": "config.json",
+    "repo_id": "Qwen/Qwen2.5-Omni-3B",
+    "revision": "f75b40e3da2003cdd6e1829b1f420ca70797c34e",
+    "sha256": "20790f362c37a1718a3e764f597ae33dfc20177399762018dffaabf8321d4dd1",
+    "size_bytes": 13183
+  }
+}

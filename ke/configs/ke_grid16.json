@@ -1,0 +1,116 @@
+{
+  "aa": false,
+  "arms": {
+    "N": {
+      "alpha": 1.0,
+      "learning_rate": 7.5e-05,
+      "stop_step": 626,
+      "target_arm": "linear_noaudio",
+      "checkpoint_steps": [
+        626
+      ]
+    }
+  },
+  "campaign_id": "rtopd_ke_release_20260915",
+  "checkpoint_steps": [
+    626
+  ],
+  "effective_batch": 32,
+  "evaluation": {
+    "adqa_version": "dev-clean-v1",
+    "backend": "vllm==0.25.1, float16, eager, batch_size=8",
+    "core3": [
+      "mmau_full",
+      "mmar",
+      "adqa"
+    ],
+    "datasets": {
+      "adqa": 1577,
+      "mmar": 1000,
+      "mmau": 1000,
+      "mmau_full": 9000
+    },
+    "independent_held_out_test": false,
+    "max_new_tokens": 256,
+    "mmau_version": "Test-mini v05.15.25",
+    "shards": {
+      "adqa": 1,
+      "mmar": 1,
+      "mmau": 1,
+      "mmau_full": 5
+    }
+  },
+  "gradient_accumulation_steps": 2,
+  "initialization": "fresh Ke-Omni-R-3B with fresh LoRA, optimizer, scheduler and RNG",
+  "initialization_code": "K",
+  "kl_temperature": 1.0,
+  "lambda_opd": 0.25,
+  "last_update_rows": 16,
+  "learning_rate": 7.5e-05,
+  "lora_alpha": 128,
+  "lora_dropout": 0.05,
+  "lora_rank": 64,
+  "max_grad_norm": 1.0,
+  "microbatch": 4,
+  "pac": false,
+  "rollout_max_new_tokens": 96,
+  "rollout_temperature": 1.0,
+  "rollout_top_k": 64,
+  "rollout_top_p": 0.95,
+  "scheduler_horizon": 626,
+  "seeds": [
+    82,
+    83,
+    84,
+    85,
+    86
+  ],
+  "selection_rule": "Fixed step 626 for every seed; report all five seeds. Optional best-seed artifact selection is post-hoc by Macro-3 and is not the reported mean.",
+  "start_step": 0,
+  "stop_step": 626,
+  "teacher": "frozen Ke-Omni-R 7B",
+  "teacher_gate": "frozen correct AND parseable gate; ungated rows retain CE and zero OPD",
+  "training_epochs": 2,
+  "training_row_visits": 20000,
+  "training_rows": 10000,
+  "warmup_steps": 32,
+  "weight_decay": 0.01,
+  "world_size": 4,
+  "tasks": [
+    {
+      "index": 0,
+      "seed": 82,
+      "arm": "N",
+      "lane": 0,
+      "task_id": "rtopd-ke-s82"
+    },
+    {
+      "index": 1,
+      "seed": 83,
+      "arm": "N",
+      "lane": 1,
+      "task_id": "rtopd-ke-s83"
+    },
+    {
+      "index": 2,
+      "seed": 84,
+      "arm": "N",
+      "lane": 2,
+      "task_id": "rtopd-ke-s84"
+    },
+    {
+      "index": 3,
+      "seed": 85,
+      "arm": "N",
+      "lane": 0,
+      "task_id": "rtopd-ke-s85"
+    },
+    {
+      "index": 4,
+      "seed": 86,
+      "arm": "N",
+      "lane": 1,
+      "task_id": "rtopd-ke-s86"
+    }
+  ]
+}

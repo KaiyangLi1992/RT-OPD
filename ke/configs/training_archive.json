@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "verified_at": "2026-07-22T20:15:00-04:00",
+  "repository": {
+    "repo_id": "bmmv-9x2q7/aa-opd-v1-training-audio-cb33687",
+    "repo_type": "dataset",
+    "visibility": "public",
+    "revision": "600d3d8d7630e87367934bdeb25a802da8a3c87e",
+    "url": "https://huggingface.co/datasets/bmmv-9x2q7/aa-opd-v1-training-audio-cb33687"
+  },
+  "source": {
+    "repo_id": "AudioLLMs/dcase2026_task5_AudioMCQ-StrongAC-GeminiCoT",
+    "revision": "cb33687ce4dc3dace4e203a2dd584fa46ae312da",
+    "license": "Apache-2.0",
+    "strict_upstream_snapshot": true,
+    "payload_files": 19483,
+    "payload_bytes": 9719816655
+  },
+  "archive": {
+    "filename": "AudioMCQ-StrongAC-GeminiCoT-cb33687.tar.zst",
+    "bytes": 8168742523,
+    "sha256": "29006679b158eab27eba0e099753617c1c8d7dd966c251262b4ef9afb449b3e7",
+    "entries": 19487,
+    "remote_lfs_metadata_verified": true
+  },
+  "manifest": {
+    "filename": "PAYLOAD_MANIFEST.jsonl",
+    "bytes": 2789540,
+    "sha256": "7d92144539d73c76483c948108e99cc97d4178cc04ed596a461778ba97bc8db5"
+  },
+  "uploaded_files": [
+    "ARCHIVE_RECEIPT.json",
+    "AudioMCQ-StrongAC-GeminiCoT-cb33687.tar.zst",
+    "LICENSE.txt",
+    "PAYLOAD_MANIFEST.jsonl",
+    "README.md",
+    "SOURCE_RECEIPT.json"
+  ],
+  "verification": {
+    "archive_size_matches": true,
+    "archive_sha256_matches_remote_lfs": true,
+    "all_five_small_files_match_local_sha256": true,
+    "benchmarks_included": false
+  }
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "repo_id": "BoJack/MMAR",
+    "revision": "3bd051123480e80d273ae9e8e9f1653f49010ac7",
+    "target": "MMAR",
+    "url": "https://huggingface.co/datasets/BoJack/MMAR",
+    "license_declared": "cc-by-nc-4.0",
+    "role": "MMAR evaluation"
+  },
+  {
+    "repo_id": "gamma-lab-umd/MMAU-test-mini",
+    "revision": "ccd9696c0111ea7060827598f310558df0b71b0a",
+    "target": "MMAU-test-mini",
+    "url": "https://huggingface.co/datasets/gamma-lab-umd/MMAU-test-mini",
+    "license_declared": "cc-by-nc-4.0",
+    "role": "MMAU Test-mini evaluation, version MMAU-v05.15.25"
+  },
+  {
+    "repo_id": "Harland/DCASE2026-Task5-DevSet",
+    "revision": "3280a1aebcd3a8b542b80a1aa175694dd4dfebca",
+    "target": "DCASE2026-Task5-DevSet",
+    "url": "https://huggingface.co/datasets/Harland/DCASE2026-Task5-DevSet",
+    "license_declared": "apache-2.0",
+    "role": "ADQA dev evaluation"
+  }
+]

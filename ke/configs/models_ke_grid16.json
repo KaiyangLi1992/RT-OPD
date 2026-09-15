@@ -1,0 +1,128 @@
+{
+  "student": {
+    "repo_id": "KE-Team/Ke-Omni-R-3B",
+    "revision": "54a602334a1379d9321cf26db6982e29f25bfeaf",
+    "directory": "KE-Team--Ke-Omni-R-3B",
+    "files": {
+      "added_tokens.json": {
+        "sha256": "e81a2cc3bd867a1217019eed202d1d8a07e1063ece716f22060dda14f6cc07d8",
+        "size": 579
+      },
+      "chat_template.jinja": {
+        "sha256": "d027e14db2e64eb2c23597240d42ea747b4fd5efd6e6a7604a990949c610f79c",
+        "size": 1281
+      },
+      "config.json": {
+        "sha256": "40b05525f444b3ae8280df4329add9f7ab122832889aacd4fa6ad8934c9b7ffe",
+        "size": 2681
+      },
+      "generation_config.json": {
+        "sha256": "4a0ede46fd1d2cbaa71908173ea846fd8203160b7133aec4d3e01e406d72976a",
+        "size": 74
+      },
+      "merges.txt": {
+        "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "size": 1671853
+      },
+      "model-00001-of-00002.safetensors": {
+        "sha256": "a66f7e178b54dd05c190ff9e2db61bb8f9634f744df13348597e040dd4871828",
+        "size": 4994841696
+      },
+      "model-00002-of-00002.safetensors": {
+        "sha256": "5ad1c6e4c3d45f2695b7053b6304a040bf684611f329361f30fba60ca493b77e",
+        "size": 4412249056
+      },
+      "model.safetensors.index.json": {
+        "sha256": "90428cb934a44377e7a6974b13b3888deabcd5d4edbfcf61bf3d7d17323a21af",
+        "size": 116144
+      },
+      "preprocessor_config.json": {
+        "sha256": "b41b73818977411d7220ba0a00fa93bfb26b62b2468994df54a474fd25c0b3d8",
+        "size": 666
+      },
+      "special_tokens_map.json": {
+        "sha256": "db7fd39f5dc9ee37998c3ed04e3a3386989182a550064d2a2a9af16822cf22f4",
+        "size": 833
+      },
+      "tokenizer.json": {
+        "sha256": "f9711e245647e88538786834977dc8afb51172e879ee661352c587cf01efd6b0",
+        "size": 11422037
+      },
+      "tokenizer_config.json": {
+        "sha256": "de43ace638ee5f342fff9d0b4b05d598ec4870dff29b721199341f05398206d9",
+        "size": 5264
+      },
+      "vocab.json": {
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+        "size": 2776833
+      }
+    }
+  },
+  "teacher": {
+    "repo_id": "KE-Team/Ke-Omni-R",
+    "revision": "a8c65184c6f6e5e8ab3fccd29b4111e6e6b8bfc4",
+    "directory": "Ke-Team--Ke-Omni-R",
+    "files": {
+      "added_tokens.json": {
+        "sha256": "e81a2cc3bd867a1217019eed202d1d8a07e1063ece716f22060dda14f6cc07d8",
+        "size": 579
+      },
+      "chat_template.json": {
+        "sha256": "1933f7ca08e6503460e981d9037ddc0b851196abfa3aceea52d6ee0c0fdfd9f0",
+        "size": 1313
+      },
+      "config.json": {
+        "sha256": "ab49d4851c01df728c2f7e5da3eca4111408d9d900ea068ef001de42ea7593fe",
+        "size": 15326
+      },
+      "generation_config.json": {
+        "sha256": "b9acf52072249e0e1850541d51ca4c85a30b9d7e23c2f2093ec0fb4139059ac7",
+        "size": 74
+      },
+      "merges.txt": {
+        "sha256": "8831e4f1a044471340f7c0a83d7bd71306a5b867e95fd870f74d0c5308a904d5",
+        "size": 1671853
+      },
+      "model-00001-of-00004.safetensors": {
+        "sha256": "45430992803a4968f8830580560937f43e3f67ce4e66dc4888eb9096a2cc65c7",
+        "size": 4985055536
+      },
+      "model-00002-of-00004.safetensors": {
+        "sha256": "1c8c17e6d3fc67757381ca7f8f232289200adcfa133ddc54ad2d4a90edb7e13d",
+        "size": 4991496832
+      },
+      "model-00003-of-00004.safetensors": {
+        "sha256": "38add778a47f86e2908154d971864fda2ac5c3f12001edd65bf5e68d3dda24a1",
+        "size": 4991496936
+      },
+      "model-00004-of-00004.safetensors": {
+        "sha256": "3d5cc909428c4e80e5770f736d263663a835a7a978807e708286c0edd97f780e",
+        "size": 2895740064
+      },
+      "model.safetensors.index.json": {
+        "sha256": "81892d7ff385bafd060a1e66d149d65a3eeb66439d42d711f58b501765cd856b",
+        "size": 119025
+      },
+      "preprocessor_config.json": {
+        "sha256": "b41b73818977411d7220ba0a00fa93bfb26b62b2468994df54a474fd25c0b3d8",
+        "size": 666
+      },
+      "special_tokens_map.json": {
+        "sha256": "db7fd39f5dc9ee37998c3ed04e3a3386989182a550064d2a2a9af16822cf22f4",
+        "size": 833
+      },
+      "tokenizer.json": {
+        "sha256": "f9711e245647e88538786834977dc8afb51172e879ee661352c587cf01efd6b0",
+        "size": 11422037
+      },
+      "tokenizer_config.json": {
+        "sha256": "8f325bb605e0c3b4fef9fa862a487ec5aa08c9bbc7f00c59bdae8fbeb01a84b8",
+        "size": 6574
+      },
+      "vocab.json": {
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+        "size": 2776833
+      }
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "aa": false,
+  "arms": {
+    "N": {
+      "alpha": 1.0,
+      "learning_rate": 2.5e-05,
+      "stop_step": 626,
+      "checkpoint_steps": [
+        626
+      ],
+      "target_arm": "linear_noaudio"
+    }
+  },
+  "campaign_id": "rtopd_qwen_release_20260915",
+  "checkpoint_steps": [
+    626
+  ],
+  "effective_batch": 32,
+  "evaluation": {
+    "adqa_version": "dev-clean-v1",
+    "backend": "vllm==0.25.1, float16, eager, batch_size=8",
+    "core3": [
+      "mmau_full",
+      "mmar",
+      "adqa"
+    ],
+    "datasets": {
+      "adqa": 1577,
+      "mmar": 1000,
+      "mmau": 1000,
+      "mmau_full": 9000
+    },
+    "independent_held_out_test": false,
+    "max_new_tokens": 256,
+    "mmau_version": "Test-mini v05.15.25",
+    "shards": {
+      "adqa": 1,
+      "mmar": 1,
+      "mmau": 1,
+      "mmau_full": 5
+    }
+  },
+  "gradient_accumulation_steps": 2,
+  "initialization": "fresh Qwen2.5-Omni-3B; no trained OPD80 state",
+  "initialization_code": "Q",
+  "kl_temperature": 1.0,
+  "lambda_opd": 0.25,
+  "last_update_rows": 16,
+  "learning_rate": 2.5e-05,
+  "lora_alpha": 128,
+  "lora_dropout": 0.05,
+  "lora_rank": 64,
+  "max_grad_norm": 1.0,
+  "microbatch": 4,
+  "pac": false,
+  "rollout_max_new_tokens": 96,
+  "rollout_temperature": 1.0,
+  "rollout_top_k": 64,
+  "rollout_top_p": 0.95,
+  "scheduler_horizon": 626,
+  "seeds": [
+    92,
+    93,
+    94,
+    95,
+    96
+  ],
+  "selection_rule": "Fixed step 626 for every seed; report all five seeds. Optional best-seed artifact selection is post-hoc by Macro-3 and is not the reported mean.",
+  "start_step": 0,
+  "stop_step": 626,
+  "teacher": "frozen Ke-Omni-R 7B",
+  "teacher_gate": "frozen correct AND parseable gate; ungated rows retain CE and zero OPD",
+  "training_epochs": 2,
+  "training_row_visits": 20000,
+  "training_rows": 10000,
+  "warmup_steps": 32,
+  "weight_decay": 0.01,
+  "world_size": 4,
+  "tasks": [
+    {
+      "index": 0,
+      "seed": 92,
+      "arm": "N",
+      "lane": 0,
+      "task_id": "rtopd-qwen-s92"
+    },
+    {
+      "index": 1,
+      "seed": 93,
+      "arm": "N",
+      "lane": 1,
+      "task_id": "rtopd-qwen-s93"
+    },
+    {
+      "index": 2,
+      "seed": 94,
+      "arm": "N",
+      "lane": 2,
+      "task_id": "rtopd-qwen-s94"
+    },
+    {
+      "index": 3,
+      "seed": 95,
+      "arm": "N",
+      "lane": 0,
+      "task_id": "rtopd-qwen-s95"
+    },
+    {
+      "index": 4,
+      "seed": 96,
+      "arm": "N",
+      "lane": 1,
+      "task_id": "rtopd-qwen-s96"
+    }
+  ]
+}
