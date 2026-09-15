@@ -170,6 +170,10 @@ The table reports the original experiments. Release checks include CPU tests,
 file-hash verification and single-audio GPU inference; four-GPU BF16 training
 and a full 626-step run have not been rerun for this package.
 
+## License
+
+The code in this repository is released under the BSD 3-Clause Clear License; see [LICENSE](LICENSE).
+
 ## Asset terms
 
 Pretrained models and datasets retain the terms stated in their linked source cards.
