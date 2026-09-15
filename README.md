@@ -1,22 +1,14 @@
 # Mizar-3B: Audio Understanding with RT-OPD
 
-**Mizar-3B** is the Ke-based 3B member of the [Mizar model family](#mizar-model-family),
-trained with **RT-OPD (Reward-Tilted On-Policy Distillation)** for audio understanding.
-RT-OPD trains audio-language students to answer questions about sounds. At each
-student-generated prefix, a frozen teacher scores the continuation **with audio
-and without audio**. Their probability difference tilts the distillation target
-toward tokens supported by the audio.
+**Mizar-3B** is a Ke-Omni-R-3B model trained with **RT-OPD
+(Reward-Tilted On-Policy Distillation)** for audio understanding. RT-OPD uses
+a frozen teacher's predictions with and without audio to construct the
+student's distillation target.
 
-This repository contains the main absent-audio RT-OPD experiment for
-**Ke-Omni-R-3B** and **Qwen2.5-Omni-3B**, with a shared **Ke-Omni-R 7B teacher**:
-training code, pinned environments, exact data manifests, evaluation tools, and
-a released Ke LoRA checkpoint.
+This repository provides Ke and Qwen training, data preparation, evaluation,
+and inference with the released Mizar-3B LoRA adapter.
 
-**[Mizar family](https://huggingface.co/collections/KaiyangLi/mizar-audio-language-model-family-6aa96a97630d4868ab979b4d)** · **[Model](https://huggingface.co/KaiyangLi/Mizar-3B)** · **[Training manifests](https://huggingface.co/KaiyangLi/Mizar-3B/tree/3b2e2b2145874dd496a506f34187767ef91c50f0/reproducibility)** · **[Training audio](https://huggingface.co/datasets/bmmv-9x2q7/aa-opd-v1-training-audio-cb33687)** · **[Data guide](docs/DATA.md)** · **[Method & recipe](docs/REVIEWER_GUIDE.md)** · **[Evaluation](docs/EVALUATION.md)**
-
-> **Access:** This GitHub repository and the released HF model/manifests are
-> private. Reviewers need access to both. The source model and dataset links
-> below identify the separate upstream assets.
+**[Mizar family](https://huggingface.co/collections/KaiyangLi/mizar-audio-language-model-family-6aa96a97630d4868ab979b4d)** · **[Model](https://huggingface.co/KaiyangLi/Mizar-3B)** · **[Training manifests](https://huggingface.co/KaiyangLi/Mizar-3B/tree/3b2e2b2145874dd496a506f34187767ef91c50f0/reproducibility)** · **[Training audio](https://huggingface.co/datasets/bmmv-9x2q7/aa-opd-v1-training-audio-cb33687)** · **[Data guide](docs/DATA.md)** · **[Evaluation](docs/EVALUATION.md)**
 
 ## Mizar model family
 
@@ -25,30 +17,13 @@ a released Ke LoRA checkpoint.
 | **Mizar-159M** | [KaiyangLi/Mizar-159M](https://huggingface.co/KaiyangLi/Mizar-159M) | [Mizar_159M](https://github.com/KaiyangLi1992/Mizar_159M) | CED-Small + SmolLM2-135M; three-stage audio-language training |
 | **Mizar-3B** | [KaiyangLi/Mizar-3B](https://huggingface.co/KaiyangLi/Mizar-3B) | [RT-OPD](https://github.com/KaiyangLi1992/RT-OPD) | Ke-Omni-R-3B + RT-OPD; released as a LoRA adapter |
 
-These models share the **Mizar** family name and audio-understanding focus.
-They use different foundations and training recipes. Mizar-3B is the name of
-the released Ke-based model; RT-OPD is its distillation method. The Qwen profile
-in this repository remains a separate RT-OPD experiment.
-
 ## Method
 
 ![Figure 1: Overview of RT-OPD from the paper.](docs/images/figure1.png)
 
-**Figure 1. Overview of RT-OPD.** The same frozen teacher predicts next-token
-probabilities with and without audio at a shared student-generated prefix.
-The log-probability contrast reshapes the teacher target; the student learns
-through reverse KL. Outlined and solid bars show schematic original and
-reshaped probabilities. [Download the original figure (PDF)](docs/images/figure1.pdf).
-
-```text
-log q = log_softmax(log p_audio + α · (log p_audio − log p_noaudio))
-loss  = answer CE + 0.25 · frozen_gate · KL(p_student || q),    α = 1
-```
-
-All distributions use the same frozen valid-vocabulary mask. The frozen gate
-activates distillation for teacher-correct, parseable training examples;
-every example retains gold-answer cross-entropy (CE). See the
-[reviewer guide](docs/REVIEWER_GUIDE.md) for the equation-to-code map and full recipe.
+**Figure 1.** RT-OPD contrasts the same teacher's predictions with and without
+audio, then trains the student against the reshaped target.
+[Original figure (PDF)](docs/images/figure1.pdf).
 
 ## Models and data
 
@@ -61,11 +36,8 @@ every example retains gold-answer cross-entropy (CE). See the
 | Qwen student base | [Qwen/Qwen2.5-Omni-3B](https://huggingface.co/Qwen/Qwen2.5-Omni-3B) | Qwen training initialization |
 | Frozen teacher | [KE-Team/Ke-Omni-R](https://huggingface.co/KE-Team/Ke-Omni-R) | Shared 7B teacher for both students; training only |
 
-The HF release contains **adapter weights**, not a merged standalone model or
-optimizer state. Qwen training is provided; no trained Qwen checkpoint is
-published in this release. Base-model revisions and file hashes are pinned in
-[Ke model configuration](ke/configs/models_ke_grid16.json) and
-[Qwen model configuration](qwen/configs/models_ke_grid16.json).
+Mizar-3B is released as a **LoRA adapter requiring the Ke 3B base**.
+Qwen training code is included; a trained Qwen checkpoint is not included.
 
 ### Training and evaluation data
 
@@ -79,10 +51,8 @@ published in this release. Base-model revisions and file hashes are pinned in
 | ADQA-cl | [DCASE2026-Task5-DevSet](https://huggingface.co/datasets/Harland/DCASE2026-Task5-DevSet) | Frozen 1,577-example evaluation manifest |
 | MMAU mini | [MMAU-test-mini](https://huggingface.co/datasets/gamma-lab-umd/MMAU-test-mini) | Separate 1,000-example set; excluded from reported Macro-3 |
 
-Preparation downloads immutable revisions, reconstructs local audio/manifests,
-and checks SHA-256. **Manifest download alone does not include audio or model
-weights.** See the [data guide](docs/DATA.md) for every pinned revision, download
-scope, and upstream provenance.
+The preparation scripts download the pinned models and audio separately from
+the manifests and verify their hashes. [Data versions and preparation](docs/DATA.md).
 
 ## Setup
 
@@ -93,7 +63,7 @@ bash ke/environment/setup.sh
 ke/.venv/bin/hf auth login
 ```
 
-Use an authenticated Git client and an HF account with access to the release.
+The code and Mizar-3B model/manifests require authorized GitHub and HF access.
 The setup creates an isolated Python **3.10** environment with **PyTorch
 2.5.1+cu124**, **Transformers 4.52.4**, and **PEFT 0.19.1**. Complete pinned
 packages: [Ke environment](ke/environment/requirements.lock) and
@@ -101,14 +71,11 @@ packages: [Ke environment](ke/environment/requirements.lock) and
 
 **Training hardware:** Linux x86-64, one node with **four matching NVIDIA GPUs**,
 each exposing **at least 44 GiB VRAM** and native BF16 support, plus a
-CUDA-12.4-compatible driver. The original runs used four RTX 6000 Ada GPUs.
+CUDA-12.4-compatible driver.
 Allow at least **150 GB of disk per profile** for the complete workflow.
-Single-audio inference has a separate memory footprint and does not require the
-four-GPU training setup.
+Single-audio inference does not require four GPUs.
 
 ## Try Mizar-3B
-
-After the Ke setup and HF login above, supply your own audio file:
 
 ```bash
 ke/.venv/bin/python tools/infer.py \
@@ -119,10 +86,9 @@ ke/.venv/bin/python tools/infer.py \
   --choices "A dog barking" "A piano playing"
 ```
 
-The helper downloads the pinned Ke base, attaches the adapter to its Thinker,
-and uses the vocabulary mask from the small manifest archive. No teacher or
-training audio is needed. For older GPUs, add `--dtype float16`.
-This convenience example is separate from the paper's frozen vLLM evaluator.
+The helper downloads the Ke base and vocabulary mask, then loads the adapter.
+For older GPUs, add `--dtype float16`. Benchmark results use the vLLM evaluation
+pipeline described below.
 
 For a locally trained Qwen adapter, use `--student qwen --adapter
 /absolute/path/to/checkpoint-626`; the helper selects the corresponding Qwen base.
@@ -131,12 +97,9 @@ For a locally trained Qwen adapter, use `--student qwen --adapter
 
 Both students train from their original base with fresh LoRA for **two epochs /
 626 optimizer updates**, on the same **10,000 examples**, at global batch **32**.
-The Ke learning rate is **7.5e-5**; Qwen uses **2.5e-5**. Full settings are in the
-[training recipe](docs/REVIEWER_GUIDE.md#effective-recipe).
+The Ke learning rate is **7.5e-5**; Qwen uses **2.5e-5**.
 
 ### Ke student
-
-After the Ke setup:
 
 ```bash
 ke/.venv/bin/python ke/scripts/prepare.py --scope training
@@ -200,52 +163,20 @@ ADQA-cl accuracies. **±** is the sample standard deviation of per-seed Macro-3.
 
 The released adapter was selected **post hoc by highest Macro-3** among the five
 Ke seeds; it is reported separately from the five-seed mean. All final
-checkpoints are fixed at step 626. Seed 86 has the best MMAU-only score (73.12%).
-Exact counts and provenance are in [main_results.json](results/main_results.json).
+checkpoints are fixed at step 626. [Per-seed results](results/main_results.json).
 
-Follow the [evaluation guide](docs/EVALUATION.md) to prepare benchmarks, run the
-frozen generation/scoring pipeline, and export MMAU full predictions for official
-scoring. Hidden MMAU labels are not bundled; MMAU mini does not replace full9k.
-To recompute the recorded aggregate table without a GPU:
+[Evaluation commands](docs/EVALUATION.md) cover benchmark preparation,
+generation and scoring. MMAU full uses hidden labels and official scoring;
+MMAU mini is excluded from Macro-3. Recompute the recorded table with:
 
 ```bash
 python3 tools/summarize.py
 ```
 
-## Reproducibility status
-
-**Completed:** original source/checkpoint hash verification; 40 CPU tests;
-all 20 epoch-order reconstructions; clean-package manifest download;
-12,577 evaluation-audio hash checks; and HF adapter re-download plus actual
-single-audio GPU inference.
-
-**Still unverified for this release:** a new four-GPU BF16 qualification and full
-626-step retraining. Nitro2's 24GB TITAN RTX cards do not meet the training
-requirements; Mantis advertises at most three GPUs per node; the original
-training host was unreachable. Historical results above come from the original
-run records. See [validation evidence and limits](docs/VALIDATION.md) before
-interpreting a new run as a reproduction.
-
-## Repository guide
-
-| Path | Contents |
-|---|---|
-| [`ke/`](ke/) / [`qwen/`](qwen/) | Separate student configurations, pinned environments, training and evaluation code |
-| [`launch_ke.sh`](launch_ke.sh) / [`launch_qwen.sh`](launch_qwen.sh) | Plan, smoke-test and training entry points |
-| [`tools/infer.py`](tools/infer.py) | Single-audio inference with a released or locally trained adapter |
-| [`docs/REVIEWER_GUIDE.md`](docs/REVIEWER_GUIDE.md) | Method, effective hyperparameters and code map |
-| [`docs/DATA.md`](docs/DATA.md) | Exact model/data revisions and preparation instructions |
-| [`docs/EVALUATION.md`](docs/EVALUATION.md) | Benchmark reproduction and official scoring |
-| [`docs/VALIDATION.md`](docs/VALIDATION.md) | Checks performed and remaining limitations |
-| [`results/main_results.json`](results/main_results.json) | Original per-seed results and provenance |
-
-The release preserves the original loss and training algorithm, with portability
-fixes for student selection, preparation, epoch orders and launch paths. It
-covers the main absent-audio method; other inherited research utilities are
-explained in the reviewer guide.
+The table reports the original experiments. Release checks include CPU tests,
+file-hash verification and single-audio GPU inference; four-GPU BF16 training
+and a full 626-step run have not been rerun for this package.
 
 ## Asset terms
 
-Pretrained models and datasets retain their upstream terms; consult the model
-and dataset cards linked above. This repository does not grant a new blanket
-license for third-party weights or audio.
+Pretrained models and datasets retain the terms stated in their linked source cards.
