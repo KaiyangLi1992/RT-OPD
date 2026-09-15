@@ -117,7 +117,8 @@ ke/.venv/bin/python tools/infer.py \
 ```
 
 The helper downloads the pinned base and attaches the adapter to its Thinker.
-It needs no teacher or training data. Use `--dtype float16` on older GPUs;
+It needs no teacher or training audio; the small shared manifest archive supplies
+the vocabulary mask. Use `--dtype float16` on older GPUs;
 this convenience inference is separate from the frozen paper evaluator.
 For a locally trained Qwen adapter, pass `--student qwen --adapter
 /absolute/path/to/checkpoint-626`; the base must match the selected student.
