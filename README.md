@@ -18,31 +18,13 @@ a released Ke LoRA checkpoint.
 
 ## Method
 
-```mermaid
-flowchart TD
-    X["Audio + question + choices"] --> S["Student · trainable LoRA<br/>Ke 3B or Qwen 3B"]
-    S --> Y["Online sampled continuation<br/>Shared prefix for teacher scoring"]
-    X --> A["Frozen Ke 7B teacher<br/>Audio present · p_audio"]
-    Q["Same question + choices<br/>Audio omitted"] --> N["Same frozen Ke 7B teacher<br/>Audio absent · p_noaudio"]
-    Y --> A
-    Y --> N
-    A --> T["Reward-tilted target q<br/>Audio vs. no-audio log-probability contrast"]
-    N --> T
-    T --> L["Answer CE + gated reverse KL<br/>Teacher target detached"]
-    G["Gold answer + frozen gate"] --> L
-    L --> U["Update student LoRA"]
-    classDef input fill:#eef2ff,stroke:#6366f1,color:#1e1b4b
-    classDef student fill:#ecfdf5,stroke:#059669,color:#064e3b
-    classDef teacher fill:#eff6ff,stroke:#2563eb,color:#1e3a8a
-    classDef objective fill:#fff7ed,stroke:#ea580c,color:#7c2d12
-    class X,Q,Y,G input
-    class S,U student
-    class A,N teacher
-    class T,L objective
-```
+![Figure 1: Overview of RT-OPD from the paper.](docs/images/figure1.png)
 
-**Figure 1.** Both teacher passes score the same student-generated continuation.
-Only the student LoRA is updated; the teacher stays frozen.
+**Figure 1. Overview of RT-OPD.** The same frozen teacher predicts next-token
+probabilities with and without audio at a shared student-generated prefix.
+The log-probability contrast reshapes the teacher target; the student learns
+through reverse KL. Outlined and solid bars show schematic original and
+reshaped probabilities. [Download the original figure (PDF)](docs/images/figure1.pdf).
 
 ```text
 log q = log_softmax(log p_audio + α · (log p_audio − log p_noaudio))
