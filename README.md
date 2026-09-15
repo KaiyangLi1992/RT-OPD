@@ -12,7 +12,7 @@ This repository contains the main absent-audio RT-OPD experiment for
 training code, pinned environments, exact data manifests, evaluation tools, and
 a released Ke LoRA checkpoint.
 
-**[Model](https://huggingface.co/KaiyangLi/Mizar-3B)** · **[Training manifests](https://huggingface.co/KaiyangLi/Mizar-3B/tree/3b2e2b2145874dd496a506f34187767ef91c50f0/reproducibility)** · **[Training audio](https://huggingface.co/datasets/bmmv-9x2q7/aa-opd-v1-training-audio-cb33687)** · **[Data guide](docs/DATA.md)** · **[Method & recipe](docs/REVIEWER_GUIDE.md)** · **[Evaluation](docs/EVALUATION.md)**
+**[Mizar family](https://huggingface.co/collections/KaiyangLi/mizar-audio-language-model-family-6aa96a97630d4868ab979b4d)** · **[Model](https://huggingface.co/KaiyangLi/Mizar-3B)** · **[Training manifests](https://huggingface.co/KaiyangLi/Mizar-3B/tree/3b2e2b2145874dd496a506f34187767ef91c50f0/reproducibility)** · **[Training audio](https://huggingface.co/datasets/bmmv-9x2q7/aa-opd-v1-training-audio-cb33687)** · **[Data guide](docs/DATA.md)** · **[Method & recipe](docs/REVIEWER_GUIDE.md)** · **[Evaluation](docs/EVALUATION.md)**
 
 > **Access:** This GitHub repository and the released HF model/manifests are
 > private. Reviewers need access to both. The source model and dataset links
