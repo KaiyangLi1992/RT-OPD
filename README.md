@@ -23,7 +23,6 @@ and inference with the released Mizar-3B LoRA adapter.
 
 **Figure 1.** RT-OPD contrasts the same teacher's predictions with and without
 audio, then trains the student against the reshaped target.
-[Original figure (PDF)](docs/images/figure1.pdf).
 
 ## Models and data
 
