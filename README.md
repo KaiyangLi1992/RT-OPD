@@ -1,21 +1,15 @@
-# Mizar-3B: Audio Understanding with RT-OPD
+# RT-OPD: Reward-Tilted On-Policy Distillation
 
-**Mizar-3B** is a Ke-Omni-R-3B model trained with **RT-OPD
-(Reward-Tilted On-Policy Distillation)** for audio understanding. RT-OPD uses
-a frozen teacher's predictions with and without audio to construct the
-student's distillation target.
+**RT-OPD** is an on-policy distillation method for compact audio-language models.
+At student-generated prefixes, a frozen teacher predicts next-token probabilities
+with and without audio. Their log-probability contrast reshapes the teacher target,
+and the student learns from it through reverse KL alongside answer supervision.
 
-This repository provides Ke and Qwen training, data preparation, evaluation,
-and inference with the released Mizar-3B LoRA adapter.
+This repository provides training with **Ke-Omni-R-3B** and **Qwen2.5-Omni-3B**
+students, data preparation, evaluation, and inference. The Ke-based model trained
+with RT-OPD is released as **Mizar-3B**.
 
-**[Mizar family](https://huggingface.co/collections/KaiyangLi/mizar-audio-language-model-family-6aa96a97630d4868ab979b4d)** · **[Model](https://huggingface.co/KaiyangLi/Mizar-3B)** · **[Training manifests](https://huggingface.co/KaiyangLi/Mizar-3B/tree/3b2e2b2145874dd496a506f34187767ef91c50f0/reproducibility)** · **[Training audio](https://huggingface.co/datasets/bmmv-9x2q7/aa-opd-v1-training-audio-cb33687)** · **[Data guide](docs/DATA.md)** · **[Evaluation](docs/EVALUATION.md)**
-
-## Mizar model family
-
-| Model | Model weights | Code | Foundation / training |
-|---|---|---|---|
-| **Mizar-159M** | [KaiyangLi/Mizar-159M](https://huggingface.co/KaiyangLi/Mizar-159M) | [Mizar_159M](https://github.com/KaiyangLi1992/Mizar_159M) | CED-Small + SmolLM2-135M; three-stage audio-language training |
-| **Mizar-3B** | [KaiyangLi/Mizar-3B](https://huggingface.co/KaiyangLi/Mizar-3B) | [RT-OPD](https://github.com/KaiyangLi1992/RT-OPD) | Ke-Omni-R-3B + RT-OPD; released as a LoRA adapter |
+**[Released model](https://huggingface.co/KaiyangLi/Mizar-3B)** · **[Training manifests](https://huggingface.co/KaiyangLi/Mizar-3B/tree/3b2e2b2145874dd496a506f34187767ef91c50f0/reproducibility)** · **[Training audio](https://huggingface.co/datasets/bmmv-9x2q7/aa-opd-v1-training-audio-cb33687)** · **[Data guide](docs/DATA.md)** · **[Evaluation](docs/EVALUATION.md)**
 
 ## Method
 
@@ -74,7 +68,7 @@ CUDA-12.4-compatible driver.
 Allow at least **150 GB of disk per profile** for the complete workflow.
 Single-audio inference does not require four GPUs.
 
-## Try Mizar-3B
+## Inference
 
 ```bash
 ke/.venv/bin/python tools/infer.py \
