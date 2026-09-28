@@ -9,7 +9,7 @@ This repository provides training with **Ke-Omni-R-3B** and **Qwen2.5-Omni-3B**
 students, data preparation, evaluation, and inference. The Ke-based model trained
 with RT-OPD is released as **Mizar-3B**.
 
-**[Released model](https://huggingface.co/KaiyangLi/Mizar-3B)** · **[Training manifests](https://huggingface.co/KaiyangLi/Mizar-3B/tree/3b2e2b2145874dd496a506f34187767ef91c50f0/reproducibility)** · **[Training audio](https://huggingface.co/datasets/bmmv-9x2q7/aa-opd-v1-training-audio-cb33687)** · **[Data guide](docs/DATA.md)** · **[Evaluation](docs/EVALUATION.md)**
+**[Paper](https://arxiv.org/abs/2609.28778)** · **[Released model](https://huggingface.co/KaiyangLi/Mizar-3B)** · **[Training manifests](https://huggingface.co/KaiyangLi/Mizar-3B/tree/3b2e2b2145874dd496a506f34187767ef91c50f0/reproducibility)** · **[Training audio](https://huggingface.co/datasets/bmmv-9x2q7/aa-opd-v1-training-audio-cb33687)** · **[Data guide](docs/DATA.md)** · **[Evaluation](docs/EVALUATION.md)**
 
 ## Method
 
