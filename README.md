@@ -13,7 +13,7 @@ with RT-OPD is released as **Mizar-3B**.
 
 ## MMAU ranking
 
-**Mizar-3B reaches 72.72% on MMAU: 4th among the 12 audio-language models below, and the highest among the compared 3B models.**
+**State of the art among 3B audio-language models: Mizar-3B reaches 72.72% on MMAU, the highest among the compared 3B models, and 4th overall among the 12 models below.**
 
 | Rank | Model | Reported size | MMAU (%) |
 |---:|---|---:|---:|
