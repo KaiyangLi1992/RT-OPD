@@ -11,6 +11,27 @@ with RT-OPD is released as **Mizar-3B**.
 
 **[Paper](https://arxiv.org/abs/2609.28778)** · **[Released model](https://huggingface.co/KaiyangLi/Mizar-3B)** · **[Training manifests](https://huggingface.co/KaiyangLi/Mizar-3B/tree/3b2e2b2145874dd496a506f34187767ef91c50f0/reproducibility)** · **[Training audio](https://huggingface.co/datasets/bmmv-9x2q7/aa-opd-v1-training-audio-cb33687)** · **[Data guide](docs/DATA.md)** · **[Evaluation](docs/EVALUATION.md)**
 
+## MMAU ranking
+
+**Mizar-3B reaches 72.72% on MMAU: 4th among the 12 audio-language models below, and the highest among the compared 3B models.**
+
+| Rank | Model | Reported size | MMAU (%) |
+|---:|---|---:|---:|
+| 1 | Audio-Thinker | 8.4B | 75.98 |
+| 2 | Nova 2 Omni | — | 75.28 |
+| 3 | Step-Audio-2 | — | 73.86 |
+| 4 | **Mizar-3B (ours)** | **3B** | **72.72** |
+| 5 | MiMo-Audio | 7B | 72.59 |
+| 6 | Audio Flamingo 3 | 8.2B | 72.42 |
+| 7 | Qwen2.5-Omni | 8.2B | 71.00 |
+| 8 | Gemini 2.5 Pro | — | 69.36 |
+| 9 | Audio Flamingo 2 Reasoning | 3B | 64.70 |
+| 10 | Kimi-Audio | 8.2B | 64.40 |
+| 11 | Audio Flamingo 2 | 3B | 61.06 |
+| 12 | GPT-4o Audio | — | 60.82 |
+
+MMAU accuracy (%), ranked by accuracy. External scores and reported sizes follow the official MMAU leaderboard. Mizar-3B is obtained by post-training Ke-Omni-R-3B with RT-OPD; its score is averaged over five seeds (the released adapter, Ke seed 85, scores 72.78; see [Results and evaluation](#results-and-evaluation) below). Protocols and parameter-count conventions differ across models. Source: Table 1 of the [paper](https://arxiv.org/abs/2609.28778).
+
 ## Method
 
 ![Figure 1: Overview of RT-OPD from the paper.](docs/images/figure1.png)
